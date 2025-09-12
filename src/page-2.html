@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page 2</title>
+    <title>Image Search App</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/page-2.css" />
   </head>
   <body>
     <load
@@ -17,12 +18,54 @@
     <main>
       <div class="container">
         <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to page 2
+          <span class="main-title-gradient">Pixabay</span> Image Search
         </h1>
+
+        <!-- 🔍 Search form -->
+        <div class="searchbox">
+          <form id="search-form" class="search-form">
+            <input
+              type="text"
+              name="query"
+              id="search-input"
+              autocomplete="off"
+              placeholder="Search images..."
+              required
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+
+        <!-- ⏳ Loader -->
+        <section class="loader-wrap" id="loader" aria-hidden="true">
+          <div class="loader-inner line-scale">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <span class="loader-text">Loading images, please wait...</span>
+        </section>
+
+        <!-- 🖼️ Gallery -->
+        <section class="gallery-wrap">
+          <ul class="gallery" id="gallery"></ul>
+        </section>
+
+        <!-- 📌 Load more button -->
+        <div class="loadmore-wrap">
+          <button id="load-more" class="load-more-btn" hidden>Load more</button>
+          <p id="end-message" class="end-message" hidden>
+            We're sorry, but you've reached the end of search results.
+          </p>
+        </div>
+
         <load src="./partials/back-link.html" />
       </div>
     </main>
 
     <load src="./partials/footer.html" />
+    <script type="module" src="./js/page-2.js"></script>
   </body>
 </html>
